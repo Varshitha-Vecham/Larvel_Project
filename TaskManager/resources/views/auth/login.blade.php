@@ -64,17 +64,7 @@
         <!-- Remember Me -->
         <div class="flex items-center justify-between mt-4">
 
-            <label class="inline-flex items-center">
-                <input
-                    type="checkbox"
-                    name="remember"
-                    class="rounded border-gray-300"
-                >
-
-                <span class="ms-2 text-sm text-gray-600">
-                    Remember Me
-                </span>
-            </label>
+            
 
             @if (Route::has('password.request'))
                 <a
