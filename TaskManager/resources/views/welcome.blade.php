@@ -1,96 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Task Manager</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f3f4f6;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            background: white;
-            width: 90%;
-            max-width: 500px;
-            padding: 50px 35px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            color: #222;
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 35px;
-        }
-
-        a {
-            display: inline-block;
-            padding: 13px 30px;
-            margin: 5px;
-            border-radius: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .login {
-            background: #2563eb;
-        }
-
-        .register {
-            background: #16a34a;
-        }
-
-        .login:hover {
-            background: #1d4ed8;
-        }
-
-        .register:hover {
-            background: #15803d;
-        }
-    </style>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
-<body>
-
-    <div class="container">
-
-        <h1>Task Manager</h1>
-
-        <p>Manage your daily tasks easily.</p>
-
-        <a href="{{ route('login') }}" class="login">
-            Login
-        </a>
-
-        <a href="{{ route('register') }}" class="register">
-            Register
-        </a>
-
-    </div>
-
+<body class="min-h-screen bg-slate-50 font-sans text-slate-900">
+    <main class="mx-auto flex min-h-screen max-w-5xl items-center justify-center px-6 py-16">
+        <section class="w-full max-w-lg rounded-2xl bg-white p-8 text-center shadow-sm ring-1 ring-slate-200 sm:p-12">
+            <h1 class="text-3xl font-bold tracking-tight">Task Manager</h1>
+            <p class="mt-3 text-slate-600">Manage your daily tasks easily.</p>
+            <div class="mt-8 flex justify-center gap-3">
+                <a href="{{ route('login') }}" class="rounded-lg bg-blue-600 px-5 py-2.5 font-semibold text-white transition hover:bg-blue-700">Login</a>
+                <a href="{{ route('register') }}" class="rounded-lg bg-emerald-600 px-5 py-2.5 font-semibold text-white transition hover:bg-emerald-700">Register</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

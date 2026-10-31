@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\TaskController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 // Authentication routes
 Route::post('/register', [AuthController::class, 'register']);
@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
-    Route::apiResource('tasks', TaskController::class);
+    // Keep API task route names separate from the web task manager routes.
+    Route::apiResource('tasks', TaskController::class)->names('api.tasks');
 
 });
