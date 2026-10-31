@@ -32,6 +32,7 @@
         @enderror
 
         <section aria-label="Your tasks" class="space-y-3">
+            <h2 class="text-xl font-semibold text-slate-800">Task List</h2>
             @forelse($tasks as $task)
                 <article class="rounded-lg border border-sky-200 bg-white p-4 shadow-sm">
                     @if(isset($editingTask) && $editingTask->is($task))
